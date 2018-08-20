@@ -12,15 +12,4 @@ class ToDoItemCell: UITableViewCell {
     
     @IBOutlet weak var toDoItemLabel: UILabel!
     @IBOutlet weak var doneImageView: UIImageView!
-    
-    func configureCell(with toDoItem: ToDoItem) {
-        toDoItemLabel.text = toDoItem.task
-        let isDone = toDoItem.isDone
-        
-        if isDone  == false {
-            doneImageView.image = #imageLiteral(resourceName: "undone")
-        } else {
-            doneImageView.image = #imageLiteral(resourceName: "done")
-        }
-    }
 }

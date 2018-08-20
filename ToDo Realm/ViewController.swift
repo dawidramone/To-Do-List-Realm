@@ -55,7 +55,9 @@ extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as? ToDoItemCell else { return UITableViewCell() }
         let toDoItem = toDoItems[indexPath.row]
-        cell.configureCell(with: toDoItem)
+        cell.toDoItemLabel.text = toDoItem.task
+        let isDone = toDoItem.isDone
+        cell.doneImageView.image = isDone ? #imageLiteral(resourceName: "done") : #imageLiteral(resourceName: "undone")
         
         return cell
     }
